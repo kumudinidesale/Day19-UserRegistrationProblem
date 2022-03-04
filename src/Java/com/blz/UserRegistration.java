@@ -1,5 +1,5 @@
 /*@Purpose :As a User need to follow pre defined Password Rules
- *Rule2- Should Have Atleat 1 Upper Case -All rules must be passed
+ *Rule3- Should Have Atleat 1 Numeric Number In Password -All rules must be passed
  *@File : User Registration Using Regex
  *@Author : Kumudini Khairnar.
  */
@@ -12,17 +12,17 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 	/*
-	 * @Purpose : Take Password Atleast One Upper Case Character & Eight Character
-	 * And Also Check It Is Getting Matched With Regex/Regular Expression Or Not
+	 * @Purpose : Take Password Atleat 1 Numeric Number In Password And Also Check
+	 * It Is Getting Matched With Regex/Regular Expression Or Not
 	 * 
 	 * @param : Name, Regex, Matches
 	 */
 	public boolean passwrdRule(String inputStr) {
-		String passwordPattern = "^(?=.*[A-Z])[A-Za-z]{8}$";
+		String passwordPattern = "^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$";
 		Pattern regex = Pattern.compile(passwordPattern);
 		Matcher passwordMatcher = regex.matcher(inputStr);
 		if (passwordMatcher.matches()) {
-			System.out.println(inputStr + " succesfully loggedin and passed second rule.");
+			System.out.println(inputStr + " succesfully loggedin and passed third rule.");
 		} else {
 			System.out.println(inputStr + " is invalid password.Kindly input minimum 8 character.");
 		}
@@ -32,7 +32,7 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		UserRegistration psswrd = new UserRegistration();
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please log in using 8 character password having one upper case.");
+		System.out.println("Please log in using 8 character password having one upper case and one numeric number.");
 		System.out.print("Enter the password : ");
 		String inputStr = sc.nextLine();
 		sc.close();
