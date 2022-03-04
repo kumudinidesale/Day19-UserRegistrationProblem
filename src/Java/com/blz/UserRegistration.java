@@ -1,5 +1,5 @@
 /*@Purpose :As a User need to follow pre defined Password Rules
- *Should clear all Email samples provided separately
+ *Rule1 -  minimum 8 Characters  – All rules must be passed
  *@File : User Registration Using Regex
  *@Author : Kumudini Khairnar.
  */
