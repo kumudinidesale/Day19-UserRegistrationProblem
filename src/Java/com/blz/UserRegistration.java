@@ -11,27 +11,27 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-
 	public static void main(String[] args) {
+
 		/*
-		 * @Purpose : Take Last Name And Check It Is Getting Matched With Regex/Regular
+		 * @Purpose : Take emailID And Check It Is Getting Matched With Regex/Regular
 		 * Expression Or Not
 		 * 
 		 * @param : Name, Regex, Matches
 		 */
 
-		String namePattern = "^[A-Z]{1}[a-z]{3,9}$";
-		Pattern regex = Pattern.compile(namePattern);
+		String mailPattern = "^abc(.+)[A-Za-z0-9]{3}+(@+)bl+(.+)[co]*(.[A-Za-z]{2})$";
+		Pattern regex = Pattern.compile(mailPattern);
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the Last name : ");
+		System.out.print("Enter the email ID : ");
 		String inputStr = sc.nextLine();
-		Matcher firstNameMatcher = regex.matcher(inputStr);
+		Matcher emailIDMatcher = regex.matcher(inputStr);
 		sc.close();
-		if (firstNameMatcher.matches()) {
-			System.out.println(inputStr + " is valid name.");
+		if (emailIDMatcher.matches()) {
+			System.out.println(inputStr + " is valid mail.");
 		} else {
-			System.out.println(inputStr + " is invalid name.Kindly input the right one.");
+			System.out.println(inputStr + " is invalid mail address.Kindly input the right one.");
 		}
 	}
 }
