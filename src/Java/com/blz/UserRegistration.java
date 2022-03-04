@@ -17,7 +17,7 @@ public class UserRegistration {
 		Pattern regex = Pattern.compile(namePattern);
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the first name : ");
+		System.out.print("Enter the Last name : ");
 		String inputStr = sc.nextLine();
 		Matcher firstNameMatcher = regex.matcher(inputStr);
 		sc.close();
