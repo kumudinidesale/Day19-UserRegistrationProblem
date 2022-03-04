@@ -11,7 +11,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
+
 	public static void main(String[] args) {
+		/*
+		 * @Purpose : Take Last Name And Check It Is Getting Matched With Regex/Regular
+		 * Expression Or Not
+		 * 
+		 * @param : Name, Regex, Matches
+		 */
 
 		String namePattern = "^[A-Z]{1}[a-z]{3,9}$";
 		Pattern regex = Pattern.compile(namePattern);
